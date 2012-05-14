@@ -65,9 +65,7 @@ module Guard
         UI.info(SOME_SPECS_MESSAGE % paths.join(' '))
       end
       failed_files = Runner.run(paths, @filtered_options)
-      @files_to_rerun = failed_files || paths
-
-      failed_files && @files_to_rerun.empty?
+      @files_to_rerun = failed_files
     end
 
     def filter_paths(paths)
